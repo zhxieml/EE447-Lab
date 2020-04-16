@@ -5,7 +5,7 @@ buildscript {
     def compose_release_version = "dev06"
     ext.compose_version = "0.1.0-$compose_release_version"
 
-    ext.room_version = "2.2.3"
+//    ext.room_version = "2.2.3"
     ext.lifecycle_version = "2.2.0"
     ext.navigation_versoin = "2.2.0"
 

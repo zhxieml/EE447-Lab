@@ -1,11 +1,6 @@
 package com.example.lab1.ui.dialpad
 
-import android.content.Intent
-import android.net.Uri
 import androidx.compose.*
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
-import androidx.ui.core.ContextAmbient
 import androidx.ui.core.Modifier
 import androidx.ui.core.Text
 import androidx.ui.layout.*
@@ -19,6 +14,7 @@ import com.example.lab1.R
 import com.example.lab1.data.appTitle
 import com.example.lab1.ui.AppDrawer
 import com.example.lab1.ui.AppTopBar
+import com.example.lab1.ui.MakePhoneCall
 import com.example.lab1.ui.utils.DialFunctionalButton
 import com.example.lab1.ui.utils.DialNumberButton
 import com.example.lab1.ui.utils.Screen
@@ -81,7 +77,7 @@ fun DialPadScreenBody(
         Row(modifier = LayoutWidth.Fill, arrangement = Arrangement.Center) {
             DialFunctionalButton(
                 icon = R.drawable.ic_backspace,
-                onClickAction = { 
+                onClick = { 
                     numberTextState.textValue = numberTextState.textValue.dropLast(1) 
                 }
             )
@@ -90,7 +86,7 @@ fun DialPadScreenBody(
             
             DialFunctionalButton(
                 icon = R.drawable.ic_call, 
-                onClickAction = {
+                onClick = {
                     isCalling = true
                 }
             )
@@ -115,15 +111,6 @@ fun NumberText(
             )
         }
     }
-}
-
-@Composable
-fun MakePhoneCall(phoneNumber: String) {
-    val intent = Intent(Intent.ACTION_CALL)
-    val context = ContextAmbient.current
-
-    intent.data = Uri.parse("tel:$phoneNumber")
-    startActivity(context, intent, null)
 }
 
 @Model

@@ -50,9 +50,9 @@ dependencies {
     implementation "androidx.ui:ui-animation:$compose_version"
     implementation "androidx.ui:ui-tooling:$compose_version"
 
-    // Room Components
-    implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
+//    // Room Components
+//    implementation "androidx.room:room-runtime:$room_version"
+//    kapt "androidx.room:room-compiler:$room_version"
     
     testImplementation "junit:junit:4.12"
     

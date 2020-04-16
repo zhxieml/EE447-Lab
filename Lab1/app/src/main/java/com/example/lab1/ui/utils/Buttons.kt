@@ -4,22 +4,14 @@ import androidx.annotation.DrawableRes
 import androidx.compose.Composable
 import androidx.ui.core.Modifier
 import androidx.ui.core.Text
-import androidx.ui.foundation.selection.Toggleable
 import androidx.ui.foundation.shape.corner.RoundedCornerShape
-import androidx.ui.graphics.vector.DrawVector
 import androidx.ui.layout.*
-import androidx.ui.material.FloatingActionButton
 import androidx.ui.material.MaterialTheme
 import androidx.ui.material.OutlinedButton
 import androidx.ui.material.TextButton
-import androidx.ui.material.ripple.Ripple
 import androidx.ui.material.surface.Surface
-import androidx.ui.res.imageResource
-import androidx.ui.res.vectorResource
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
-
-import com.example.lab1.R
 
 @Composable
 fun DrawerButton(
@@ -87,10 +79,10 @@ fun DialNumberButton(
 fun DialFunctionalButton(
     @DrawableRes icon: Int,
     modifier: Modifier = LayoutSize(width = 80.dp, height = 40.dp) + LayoutPadding(4.dp),
-    onClickAction: () -> Unit
+    onClick: () -> Unit
 ) {
     OutlinedButton(
-        onClick = onClickAction,
+        onClick = onClick,
         modifier = modifier,
         shape = MaterialTheme.shapes().button
     ) {

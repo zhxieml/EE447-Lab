@@ -13,6 +13,8 @@
 - [应用架构指南](https://developer.android.com/jetpack/docs/guide)
 - [Declarative UI](https://flutter.dev/docs/get-started/flutter-for/declarative)
 - [Android Jetpack Architecture Components: Getting Started](https://www.raywenderlich.com/6729-android-jetpack-architecture-components-getting-started)
+- [使用 Room 将数据保存到本地数据库](https://developer.android.com/training/data-storage/room)
+- [Jetpack Compose breaks Room Compiler]
 
 ## Some Key Words
 
@@ -30,3 +32,4 @@
 - object -- "Singleton Pattern"
 - Tricky in `onClick()`: it is not **Composable**!
 - "Here we see a lot less *stuff* in the Jetpack Compose variant. Most of this is due to the Kotlin DSL that was made for Jetpack Compose."
+- 

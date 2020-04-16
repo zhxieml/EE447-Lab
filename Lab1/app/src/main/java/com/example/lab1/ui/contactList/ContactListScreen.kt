@@ -1,22 +1,21 @@
-package com.example.lab1.ui.home
+package com.example.lab1.ui.contactList
 
 import androidx.compose.Composable
 import androidx.compose.remember
-import androidx.ui.layout.Column
 import androidx.ui.core.Modifier
 import androidx.ui.core.Opacity
 import androidx.ui.foundation.VerticalScroller
+import androidx.ui.layout.Column
 import androidx.ui.layout.LayoutPadding
 import androidx.ui.material.*
 import androidx.ui.unit.dp
-
 import com.example.lab1.R
 import com.example.lab1.data.appTitle
-import com.example.lab1.data.contacts
+import com.example.lab1.entity.Contact
 import com.example.lab1.ui.AppDrawer
 import com.example.lab1.ui.AppTopBar
+import com.example.lab1.ui.utils.EasyDialerStatus
 import com.example.lab1.ui.utils.Screen
-import com.example.lab1.model.Contact
 import com.example.lab1.ui.utils.navigateTo
 
 @Composable
@@ -40,8 +39,11 @@ fun HomeScreen(scaffoldState: ScaffoldState = remember { ScaffoldState() }) {
             floatingActionButton = {
                 FloatingActionButton(text = "Dial", onClick = { navigateTo(Screen.DialPad) })
             }
-        ) {
-                modifier -> HomeScreenBody(modifier = modifier, contacts = contacts)
+        ) { modifier -> 
+            HomeScreenBody(
+                modifier = modifier, 
+                contacts = EasyDialerStatus.contacts
+            )
         }
     }
 }
