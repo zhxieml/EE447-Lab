@@ -1,47 +1,48 @@
-package com.example.lab1.ui.contactList
+package com.example.lab1.ui
 
 import androidx.compose.Composable
-import androidx.compose.state
 import androidx.ui.core.Text
-import androidx.ui.foundation.Clickable
+import androidx.ui.foundation.shape.corner.RoundedCornerShape
 import androidx.ui.layout.*
 import androidx.ui.material.Button
 import androidx.ui.material.EmphasisLevels
 import androidx.ui.material.ProvideEmphasis
-import androidx.ui.material.ripple.Ripple
+import androidx.ui.material.surface.Card
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
-import com.example.lab1.entity.Contact
+import com.example.lab1.viewModel.Contact
 import com.example.lab1.ui.utils.ThemedPreview
 import com.example.lab1.ui.utils.VectorImage
-import com.example.lab1.ui.utils.themeTypography
+import com.example.lab1.ui.utils.mainThemeTypography
 import com.example.lab1.R
-import com.example.lab1.ui.MakePhoneCall
-import com.example.lab1.ui.utils.EasyDialerStatus
+import com.example.lab1.viewModel.EasyDialerStatus
 
 @Composable
 fun ContactName(contact: Contact) {
     ProvideEmphasis(emphasis = EmphasisLevels().high) {
-        Text(contact.firstName + " " + contact.lastName, style = themeTypography.subtitle1)
+        Text(contact.firstName + " " + contact.lastName, style = mainThemeTypography.subtitle1)
     }
 }
 
 @Composable
 fun ContactPhoneNumber(contact: Contact) {
     if (EasyDialerStatus.isCalling)
-        MakePhoneCall(phoneNumber = contact.phoneNumber)
+        makePhoneCall()
     
     Row {
         ProvideEmphasis(emphasis = EmphasisLevels().medium) {
             Button(
-                onClick = { EasyDialerStatus.isCalling = true }, 
+                onClick = {
+                    EasyDialerStatus.phoneNumber = contact.phoneNumber
+                    EasyDialerStatus.isCalling = true 
+                }, 
                 children = {
                     Row {
                         VectorImage(id = R.drawable.ic_call_made)
                         
                         Spacer(modifier = LayoutWidth(6.dp))
                         
-                        Text(text = contact.phoneNumber.toString(), style = themeTypography.body2)
+                        Text(text = contact.phoneNumber.toString(), style = mainThemeTypography.body2)
                     }
             })
         }
@@ -52,19 +53,17 @@ fun ContactPhoneNumber(contact: Contact) {
 fun ContactCard(
     contact: Contact
 ) {
-    Ripple(bounded = true) {
-        Clickable() {
-            Row(modifier = LayoutPadding(all = 16.dp)) {
-                VectorImage(
-                    modifier = LayoutGravity.Center,
-                    id = R.drawable.ic_profile_image
-                )
-                
-                Spacer(modifier = LayoutWidth(8.dp))
-                Column(modifier = LayoutFlexible(1f)) {
-                    ContactName(contact = contact)
-                    ContactPhoneNumber(contact = contact)
-                }
+    Card(modifier = LayoutPadding(4.dp), shape = RoundedCornerShape(4.dp)) {
+        Row(modifier = LayoutPadding(all = 16.dp)) {
+            VectorImage(
+                modifier = LayoutGravity.Center,
+                id = R.drawable.ic_profile_image
+            )
+
+            Spacer(modifier = LayoutWidth(8.dp))
+            Column(modifier = LayoutFlexible(1f)) {
+                ContactName(contact = contact)
+                ContactPhoneNumber(contact = contact)
             }
         }
     }
@@ -74,12 +73,9 @@ fun ContactCard(
 @Composable
 fun PreviewContactCard() {
     val contact1 = Contact(
-        id = 0,
         firstName = "Zhihui",
         lastName = "Xie",
-        phoneNumber = "11111111111",
-        email = "fffffarmer@gmail.com",
-        github = "fffffarmer"
+        phoneNumber = "11111111111"
     )
     
     ThemedPreview {

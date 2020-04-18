@@ -25,7 +25,7 @@ val bodyFontFamily = fontFamily(fonts = listOf(
     bodyBold
 ))
 
-val themeTypography = Typography(
+val mainThemeTypography = Typography(
     h4 = TextStyle(
         fontFamily = appFontFamily,
         fontWeight = FontWeight.W600,

@@ -1,10 +1,12 @@
-package com.example.lab1.ui
+package com.example.lab1
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.ui.core.setContent
-import com.example.lab1.ui.utils.EasyDialerStatus
+import com.example.lab1.data.dialRequestCode
+import com.example.lab1.ui.EasyDialerApp
+import com.example.lab1.viewModel.EasyDialerStatus
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +18,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        EasyDialerStatus.isCalling = false
+        
+        if (requestCode == dialRequestCode) {
+            EasyDialerStatus.isCalling = false
+            EasyDialerStatus.phoneNumber = ""
+        }
     }
 }

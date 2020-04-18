@@ -11,22 +11,24 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.ui.animation.Crossfade
 import androidx.ui.core.ContextAmbient
+import androidx.ui.core.Text
 import androidx.ui.layout.*
+import androidx.ui.material.*
 import androidx.ui.material.surface.Surface
 import androidx.ui.unit.dp
-import com.example.lab1.ui.contactList.HomeScreen
-import androidx.ui.core.Text
-import androidx.ui.material.*
-import com.example.lab1.ui.utils.*
 import com.example.lab1.R
+import com.example.lab1.data.dialRequestCode
 import com.example.lab1.data.permissionsNeeded
-import com.example.lab1.ui.dialpad.DialPadScreen
+import com.example.lab1.viewModel.EasyDialerStatus
+import com.example.lab1.viewModel.Screen
+import com.example.lab1.viewModel.navigateTo
+import com.example.lab1.ui.utils.*
 
 @Composable
 fun EasyDialerApp() {
     checkPermissions(context = ContextAmbient.current)
     
-    MaterialTheme(colors = mainThemeColors, typography = themeTypography) {
+    MaterialTheme(colors = mainThemeColors, typography = mainThemeTypography) {
         AppContent()
     }
 }
@@ -34,11 +36,8 @@ fun EasyDialerApp() {
 @Composable
 private fun AppContent() {
     Crossfade(current = EasyDialerStatus.currentScreen) { screen ->
-        Surface(color = MaterialTheme.colors().background) {
-            when (screen) {
-                is Screen.Home -> HomeScreen()
-                is Screen.DialPad -> DialPadScreen()
-            }
+        Surface(color = mainThemeColors.background) {
+            HomeScreen()
         }
     }
 }
@@ -51,7 +50,7 @@ fun AppDrawer(currentScreen: Screen, closeDrawer: () -> Unit) {
         Row(modifier = LayoutPadding(16.dp)) {
             Text(
                 text = "Easy Dialer",
-                style = themeTypography.h1
+                style = mainThemeTypography.h1
             )
         }
         
@@ -84,12 +83,12 @@ fun AppTopBar(
 )}
 
 @Composable
-fun MakePhoneCall(phoneNumber: String) {
+fun makePhoneCall() {
     val intent = Intent(Intent.ACTION_CALL)
     val context = ContextAmbient.current
-
-    intent.data = Uri.parse("tel:$phoneNumber")
-    ContextCompat.startActivity(context, intent, null)
+    
+    intent.data = Uri.parse("tel:${EasyDialerStatus.phoneNumber}")
+    ActivityCompat.startActivityForResult(context as Activity, intent, dialRequestCode, null)
 }
 
 @Composable

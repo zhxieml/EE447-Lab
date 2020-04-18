@@ -9,7 +9,7 @@ import androidx.ui.material.surface.Surface
 @Composable
 internal fun ThemedPreview(
     colors: ColorPalette = mainThemeColors,
-    typography: Typography = themeTypography,
+    typography: Typography = mainThemeTypography,
     children: @Composable() () -> Unit
 ) {
     MaterialTheme(colors = colors, typography = typography) {

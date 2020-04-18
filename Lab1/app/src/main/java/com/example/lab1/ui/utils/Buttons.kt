@@ -53,7 +53,7 @@ fun DrawerButton(
 
                 Text(
                     text = label,
-                    style = themeTypography.body2.copy(color = textIconColor)
+                    style = mainThemeTypography.body2.copy(color = textIconColor)
                 )
             }
         }
@@ -63,7 +63,7 @@ fun DrawerButton(
 @Composable
 fun DialNumberButton(
     text: String,
-    modifier: Modifier = LayoutSize(width = 80.dp, height = 40.dp) + LayoutPadding(4.dp),
+    modifier: Modifier = LayoutSize(width = 100.dp, height = 50.dp) + LayoutPadding(4.dp),
     onClickAction: () -> Unit
 ) {
     OutlinedButton(
@@ -71,14 +71,14 @@ fun DialNumberButton(
         modifier = modifier,
         shape = MaterialTheme.shapes().button
     ) {
-        Text(text = text, style = themeTypography.h6)
+        Text(text = text, style = mainThemeTypography.h6)
     }
 }
 
 @Composable
 fun DialFunctionalButton(
     @DrawableRes icon: Int,
-    modifier: Modifier = LayoutSize(width = 80.dp, height = 40.dp) + LayoutPadding(4.dp),
+    modifier: Modifier = LayoutSize(width = 100.dp, height = 50.dp) + LayoutPadding(4.dp),
     onClick: () -> Unit
 ) {
     OutlinedButton(

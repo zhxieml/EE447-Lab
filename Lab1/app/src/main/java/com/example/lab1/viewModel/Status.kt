@@ -1,9 +1,7 @@
-package com.example.lab1.ui.utils
+package com.example.lab1.viewModel
 
 import androidx.compose.Model
-import androidx.compose.frames.ModelList
 import com.example.lab1.data.initialContacts
-import com.example.lab1.entity.Contact
 
 sealed class Screen {
     object Home: Screen()
@@ -12,9 +10,11 @@ sealed class Screen {
 
 @Model
 object EasyDialerStatus {
-    var currentScreen: Screen = Screen.Home
-    var contacts = ModelList<Contact>()
+    var currentScreen: Screen =
+        Screen.Home
+    var contacts = ArrayList<Contact>()
     var isCalling = false
+    var phoneNumber = ""
     
     init {
         contacts.addAll(initialContacts)
