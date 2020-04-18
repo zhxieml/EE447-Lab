@@ -1,11 +1,10 @@
-package com.example.lab1.viewModel
+package com.example.lab1.model
 
 import androidx.compose.Model
 import com.example.lab1.data.initialContacts
 
 sealed class Screen {
     object Home: Screen()
-    object DialPad: Screen()
 }
 
 @Model

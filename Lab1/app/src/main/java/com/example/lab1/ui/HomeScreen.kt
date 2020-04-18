@@ -22,9 +22,9 @@ import androidx.ui.text.TextFieldValue
 import androidx.ui.unit.dp
 import com.example.lab1.R
 import com.example.lab1.data.appTitle
-import com.example.lab1.viewModel.Contact
-import com.example.lab1.viewModel.EasyDialerStatus
-import com.example.lab1.viewModel.Screen
+import com.example.lab1.model.Contact
+import com.example.lab1.model.EasyDialerStatus
+import com.example.lab1.model.Screen
 import com.example.lab1.ui.utils.*
 
 @Composable
@@ -54,7 +54,6 @@ fun HomeScreen(scaffoldState: ScaffoldState = remember { ScaffoldState() }) {
                                     modifier = LayoutPadding(16.dp) + LayoutWidth.Fill,
                                     keyboardType = KeyboardType.Text,
                                     onFocus = { firstNameValue = TextFieldValue("") },
-                                    // Update value of textValue with the latest value of the text field
                                     onValueChange = {
                                         firstNameValue = it
                                     }
@@ -67,7 +66,6 @@ fun HomeScreen(scaffoldState: ScaffoldState = remember { ScaffoldState() }) {
                                     modifier = LayoutPadding(16.dp) + LayoutWidth.Fill,
                                     keyboardType = KeyboardType.Text,
                                     onFocus = { lastNameValue = TextFieldValue("") },
-                                    // Update value of textValue with the latest value of the text field
                                     onValueChange = {
                                         lastNameValue = it
                                     }

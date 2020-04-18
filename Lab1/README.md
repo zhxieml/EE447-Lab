@@ -19,7 +19,7 @@
 ## Some Key Words
 
 - "Once you mastered the idea of building UIs through “composing” components, switching to the Flutter (React) pattern is pretty simple." [Android MVI with Jetpack Compose](https://medium.com/swlh/android-mvi-with-jetpack-compose-b0890f5156ac)
-- It is my first time doing some MVI / Declarative Programming
+- It is my first time doing some Declarative Programming
 - "What if we can change this situation, giving the `ViewModel` , or way better — the `ViewState`— the power to build the *UI*, and letting the `View` only render it? That’s possible thanks to Jetpack Compose. " [Android MVI with Jetpack Compose](https://medium.com/swlh/android-mvi-with-jetpack-compose-b0890f5156ac)
 - "Compose is a reactive UI toolkit entirely developed in Kotlin. Compose looks quite similar to existing UI frameworks like React, Litho or Flutter."
 - main goals in mind:

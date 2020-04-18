@@ -19,9 +19,9 @@ import androidx.ui.unit.dp
 import com.example.lab1.R
 import com.example.lab1.data.dialRequestCode
 import com.example.lab1.data.permissionsNeeded
-import com.example.lab1.viewModel.EasyDialerStatus
-import com.example.lab1.viewModel.Screen
-import com.example.lab1.viewModel.navigateTo
+import com.example.lab1.model.EasyDialerStatus
+import com.example.lab1.model.Screen
+import com.example.lab1.model.navigateTo
 import com.example.lab1.ui.utils.*
 
 @Composable

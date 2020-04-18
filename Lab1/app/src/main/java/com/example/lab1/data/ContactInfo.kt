@@ -1,6 +1,6 @@
 package com.example.lab1.data
 
-import com.example.lab1.viewModel.Contact
+import com.example.lab1.model.Contact
 
 val contact1 = Contact(
     firstName = "Zhihui",

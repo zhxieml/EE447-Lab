@@ -1,4 +1,4 @@
-package com.example.lab1.viewModel
+package com.example.lab1.model
 
 data class Contact (
     var firstName: String = "",

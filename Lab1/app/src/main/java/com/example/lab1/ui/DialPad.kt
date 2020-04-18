@@ -12,7 +12,7 @@ import androidx.ui.material.surface.Surface
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
 import com.example.lab1.R
-import com.example.lab1.viewModel.EasyDialerStatus
+import com.example.lab1.model.EasyDialerStatus
 import com.example.lab1.ui.utils.DialFunctionalButton
 import com.example.lab1.ui.utils.DialNumberButton
 import com.example.lab1.ui.utils.mainThemeColors

@@ -10,12 +10,12 @@ import androidx.ui.material.ProvideEmphasis
 import androidx.ui.material.surface.Card
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
-import com.example.lab1.viewModel.Contact
+import com.example.lab1.model.Contact
 import com.example.lab1.ui.utils.ThemedPreview
 import com.example.lab1.ui.utils.VectorImage
 import com.example.lab1.ui.utils.mainThemeTypography
 import com.example.lab1.R
-import com.example.lab1.viewModel.EasyDialerStatus
+import com.example.lab1.model.EasyDialerStatus
 
 @Composable
 fun ContactName(contact: Contact) {

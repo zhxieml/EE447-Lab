@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.ui.core.setContent
 import com.example.lab1.data.dialRequestCode
 import com.example.lab1.ui.EasyDialerApp
-import com.example.lab1.viewModel.EasyDialerStatus
+import com.example.lab1.model.EasyDialerStatus
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
