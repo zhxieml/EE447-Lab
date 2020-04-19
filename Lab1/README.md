@@ -80,7 +80,7 @@ This basically shows what composable functions are: they are just widgets over w
 
 And now, we are good to go.
 
-<img src="/fig/hello_world.png" alt="hello world" style="zoom: 20%;" />
+<img src="fig/hello_world.png" alt="hello world" style="zoom: 20%;" />
 
 ## V. Easy Dialer
 
@@ -98,7 +98,7 @@ Thanks to Jetpack Compose, we can simplified it a lot by 'removing' `View Model`
 
 As for `View` part, we construct UI with composable widgets layer by layer. This provides us great ability of reuse. For example, the main screen can be constructed by first wrapping a `MaterialTheme()`, and filling it with some `Row()` and `Column()` to control position, and finally adding some `Text()` to display information. In this way, we avoid using too much code. Traditional fragments usually inherit other fragments to realize fancy functionality. With composable functions, we can instead combine small widgets into big ones.
 
-<img src="/fig/too_much_code" alt="too much code" style="zoom:50%;" />
+<img src="fig/too_much_code" alt="too much code" style="zoom:50%;" />
 
 And finally, I have something to say about `Repository` part. At first I tried to use [Room](https://developer.android.com/training/data-storage/room) to construct simple database so that our emergency contacts can persist in our phone. Unfortunately, after I finish all the database and DAO, I find my project unbuildable. And then I find out [Jetpack Compose breaks Room Compiler](https://stackoverflow.com/questions/59277354/jetpack-compose-breaks-room-compiler). I was shocked and regretted. Therefore, in this project I only play with static data. 
 
@@ -190,7 +190,7 @@ object EasyDialerStatus {
 
 Here I briefly present Easy Dialer's UI and its functionality. Please read my code for detailed information. 
 
-<img src="/fig/main_screen.png" alt="main screen" style="zoom:20%;" />
+<img src="fig/main_screen.png" alt="main screen" style="zoom:20%;" />
 
 Like other contact-management apps, Easy Dialer display emergency contacts with the scroller widget.  If we click the phone number below contacts' name, we will dial it. 
 
@@ -213,11 +213,11 @@ private fun ContactListScreenBody(
 }
 ```
 
-<img src="/fig/dialpad.png" alt="dialpad" style="zoom:20%;" />
+<img src="fig/dialpad.png" alt="dialpad" style="zoom:20%;" />
 
 A `BottomDrawerLayout` allows us to hide a dial pad in the bottom drawer. When we need to dial somebody with a number, just draw it up. 
 
-<img src="/fig/form.png" alt="form" style="zoom:20%;" />
+<img src="fig/form.png" alt="form" style="zoom:20%;" />
 
 Sure we want to manage our emergency contacts. I use a `FloatingActionButton` to call up an `AlertDialog` which contains a form to add some contact. **Once we click 'add', the emergency contact list will immediately updated, even if we did not observe this data at all**. This is the magic of Jetpack Compose! 
 
