@@ -17,6 +17,7 @@ import androidx.ui.material.*
 import androidx.ui.material.surface.Surface
 import androidx.ui.unit.dp
 import com.example.lab1.R
+import com.example.lab1.data.appTitle
 import com.example.lab1.data.dialRequestCode
 import com.example.lab1.data.permissionsNeeded
 import com.example.lab1.model.EasyDialerStatus
@@ -49,7 +50,7 @@ fun AppDrawer(currentScreen: Screen, closeDrawer: () -> Unit) {
         
         Row(modifier = LayoutPadding(16.dp)) {
             Text(
-                text = "Easy Dialer",
+                text = appTitle,
                 style = mainThemeTypography.h1
             )
         }
@@ -83,9 +84,8 @@ fun AppTopBar(
 )}
 
 @Composable
-fun makePhoneCall() {
+fun makePhoneCall(context: Context) {
     val intent = Intent(Intent.ACTION_CALL)
-    val context = ContextAmbient.current
     
     intent.data = Uri.parse("tel:${EasyDialerStatus.phoneNumber}")
     ActivityCompat.startActivityForResult(context as Activity, intent, dialRequestCode, null)

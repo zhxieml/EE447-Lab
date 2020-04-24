@@ -1,6 +1,7 @@
 package com.example.lab1.ui
 
 import androidx.compose.Composable
+import androidx.ui.core.ContextAmbient
 import androidx.ui.core.Text
 import androidx.ui.foundation.shape.corner.RoundedCornerShape
 import androidx.ui.layout.*
@@ -27,7 +28,7 @@ fun ContactName(contact: Contact) {
 @Composable
 fun ContactPhoneNumber(contact: Contact) {
     if (EasyDialerStatus.isCalling)
-        makePhoneCall()
+        makePhoneCall(context = ContextAmbient.current)
     
     Row {
         ProvideEmphasis(emphasis = EmphasisLevels().medium) {
@@ -50,9 +51,7 @@ fun ContactPhoneNumber(contact: Contact) {
 }
 
 @Composable
-fun ContactCard(
-    contact: Contact
-) {
+fun ContactCard(contact: Contact) {
     Card(modifier = LayoutPadding(4.dp), shape = RoundedCornerShape(4.dp)) {
         Row(modifier = LayoutPadding(all = 16.dp)) {
             VectorImage(

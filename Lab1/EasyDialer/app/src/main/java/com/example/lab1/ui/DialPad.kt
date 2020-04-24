@@ -2,6 +2,8 @@ package com.example.lab1.ui
 
 import androidx.compose.Composable
 import androidx.compose.Model
+import androidx.core.content.ContextCompat
+import androidx.ui.core.ContextAmbient
 import androidx.ui.core.Modifier
 import androidx.ui.core.Text
 import androidx.ui.foundation.Border
@@ -24,7 +26,7 @@ fun DialPad(
     numberTextState: NumberTextState = NumberTextState()
 ) {
     if (EasyDialerStatus.isCalling)
-        makePhoneCall()
+        makePhoneCall(context = ContextAmbient.current)
 
     Box(modifier = LayoutSize.Fill) {
         Column(modifier = modifier) {
