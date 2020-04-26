@@ -30,15 +30,15 @@ import com.example.lab1.ui.utils.*
 @Composable
 fun HomeScreen(scaffoldState: ScaffoldState = remember { ScaffoldState() }) {
     val (bottomDrawerState, bottomDrawerOnStateChange) = state { DrawerState.Closed }
-    var dialogShowPopup by state { false }
+    var dialogShow by state { false }
 
-    if (dialogShowPopup) {
+    if (dialogShow) {
         var firstNameValue by state { TextFieldValue("Enter first name") }
         var lastNameValue by state { TextFieldValue("Enter last name") }
         var phoneNumberValue by state { TextFieldValue("Enter phone number")}
         
         AlertDialog(
-            onCloseRequest = { dialogShowPopup = false },
+            onCloseRequest = { dialogShow = false },
             text = {
                 Column {
                     VectorImage(
@@ -90,7 +90,7 @@ fun HomeScreen(scaffoldState: ScaffoldState = remember { ScaffoldState() }) {
             confirmButton = {
                 Button(
                     onClick = {
-                        dialogShowPopup = false
+                        dialogShow = false
                         EasyDialerStatus.contacts.add(
                             Contact(
                                 firstName = firstNameValue.text,
@@ -125,11 +125,11 @@ fun HomeScreen(scaffoldState: ScaffoldState = remember { ScaffoldState() }) {
             floatingActionButton = {
                 FloatingActionButton(
                     onClick = {
-                         dialogShowPopup = true
+                         dialogShow = true
                     },
                     color = mainThemeColors.secondary
                 ) {
-                    IconButton(onClick = { dialogShowPopup = true }) {
+                    IconButton(onClick = { dialogShow = true }) {
                         Icon(icon = Icons.Filled.Favorite)
                     }
                 }
