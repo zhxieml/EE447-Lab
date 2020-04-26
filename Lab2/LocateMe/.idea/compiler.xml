@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Locate_Me.app" target="1.8" />
+      <module name="Locate_Me.backend" target="1.8" />
+      <module name="Locate_Me.client" target="1.8" />
+      <module name="Locate_Me.test" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
