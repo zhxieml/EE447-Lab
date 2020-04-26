@@ -97,7 +97,7 @@ To start scanning, the application should first ask for permissions. When all pe
 
 To present scanning results, a `VerticalScroller()` is used and the SSID, BSSID and strength of every result are displayed. Besides, I fix a box in the top to display information of the current connection. Since the UI design patterns are similar to [Easy Dialer](../../Lab1/README.md), I am not going to discuss it in detail. Feel free to review code!
 
-<img src="C:/Users/xzh87/OneDrive/Reference/S3-2/EE447/EE447_Lab/Lab2/fig/main_screen.png" alt="Main Screen" style="zoom:20%;" />
+<img src="fig/main_screen.png" alt="Main Screen" style="zoom:20%;" />
 
 Another thing worth mentioning is that I noticed [Android added platform support](https://android-developers.googleblog.com/2018/03/previewing-android-p.html) for the **IEEE 802.11mc** Wi-Fi protocol -- also known as Wi-Fi Round-Trip-Time (RTT) -- after Android 9.0. However, due to the lack of support on 802.11mc, none of routers scanned in my house support this feature.
 
@@ -114,7 +114,7 @@ The procedure to accomplish indoor positioning is roughly like this:
 
 The Android client needs to realize methods to allow the user to report his or her Wi-Fi fingerprint as well as the relative position in the building. The relative position is represented by two 0-1 floats indicating the relative latitude and longitude the user is in the building. The user can input this with a `Slider()`. 
 
-<img src="C:/Users/xzh87/OneDrive/Reference/S3-2/EE447/EE447_Lab/Lab2/fig/add_fingerprint.png" alt="Add Fingerprint" style="zoom:20%;" />
+<img src="fig/add_fingerprint.png" alt="Add Fingerprint" style="zoom:20%;" />
 
 When the user clicks the button 'Add', our Android client will send the data to our Python server with TCP sockets. 
 
@@ -180,7 +180,7 @@ fun sendFingerprint(jsonFingerprint: String): Location {
 
 Since we do not store data in the mobile device as [Jetpack Compose will breaks the compiler of Room](https://stackoverflow.com/questions/59277354/jetpack-compose-breaks-room-compiler), I realize another method to request stored positions in the server. This allows the user to check how many fingerprints are recorded. 
 
-<img src="C:/Users/xzh87/OneDrive/Reference/S3-2/EE447/EE447_Lab/Lab2/fig/stored_position_screen.png" alt="Stored Position Screen" style="zoom:20%;" />
+<img src="fig/stored_position_screen.png" alt="Stored Position Screen" style="zoom:20%;" />
 
 The method to realize it using TCP sockets is similar but easier. 
 
