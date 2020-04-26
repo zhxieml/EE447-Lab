@@ -43,30 +43,5 @@ class Estimator():
         self.neighLongitude.fit(self.X, self.Y2)
 
 
-def estimate(x):
-    DF = pd.read_csv("dbFingerprint.csv")
-    X = DF.iloc[:, 0:100].to_numpy()
-    Y1 = DF.iloc[:, 100].to_numpy()
-    Y2 = DF.iloc[:, 101].to_numpy()
-    
-    if X.shape[0] > X.shape[1]:
-        pca = PCA(n_components='mle', svd_solver='full')
-    else:
-        pca = PCA()
-
-    pca.fit(X)
-
-    print("Estimated noise covariance: {}".format(pca.noise_variance_))
-    print("Explained variance: {}".format(pca.explained_variance_))
-
-    neighLatitude = KNeighborsRegressor(n_neighbors=3)
-    neighLatitude.fit(X, Y1)
-    neighLongitude = KNeighborsRegressor(n_neighbors=3)
-    neighLongitude.fit(X, Y2)
-
-    print(neighLatitude.predict(np.random.rand(1, 100)))
-
-
 if __name__ == "__main__":
-    # estimate([])
     print(np.matrix([0, 0, 0]).shape)
