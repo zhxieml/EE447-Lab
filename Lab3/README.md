@@ -1,5 +1,7 @@
 # QR Code
 
+Not my code.
+
 ## Introduction
 
 Nowadays, QR Code has a variety of applications including phone payment, class register, and information fetching, etc. And also it is not that difficult to develop an application with the capability of QR code encoding and decoding, thanks to the open-source multi-format 1D/2D barcode image processing library **Zxing**. Basic functionalities can be easily implemented in an Android phone using its modules for Android development.
