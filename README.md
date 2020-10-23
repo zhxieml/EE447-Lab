@@ -1,4 +1,4 @@
-# EE447_Lab
+# EE447 Lab
 Labs of SJTU EE447
 
 - [Easy Dialer: A Simple App with Jetpack Compose](Lab1/README.md)
